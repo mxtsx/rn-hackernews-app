@@ -16,7 +16,7 @@ export const NewsElement: React.FC<NewsType> = React.memo(({karma, title, url, b
       <View style={styles.mainContent}>
         <View style={styles.blockWrapper}>
           <NewsItemText title={'Url:'}>{!!url ? url : 'No URL to show'}</NewsItemText>
-          <NewsItemText title={'Timestamp:'}>{dateConverter(time)}</NewsItemText>
+          <NewsItemText title={'Published:'}>{dateConverter(time)}</NewsItemText>
           <NewsItemText title={'Author:'}>{by}</NewsItemText>
           <NewsItemText title={'Authors karma:'}>{karma}</NewsItemText>
         </View>
