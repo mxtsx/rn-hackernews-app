@@ -3,6 +3,7 @@ import { Dimensions, StyleSheet, View } from "react-native";
 import { theme } from "../theme/theme";
 import { NewsType } from "../types/data.types";
 import { NewsItemText } from "./news-item-text.component";
+import { dateConverter } from "../utils/date-converter.util";
 
 const { width } = Dimensions.get('window')
 
@@ -15,7 +16,7 @@ export const NewsElement: React.FC<NewsType> = React.memo(({karma, title, url, b
       <View style={styles.mainContent}>
         <View style={styles.blockWrapper}>
           <NewsItemText title={'Url:'}>{!!url ? url : 'No URL to show'}</NewsItemText>
-          <NewsItemText title={'Timestamp:'}>{time}</NewsItemText>
+          <NewsItemText title={'Timestamp:'}>{dateConverter(time)}</NewsItemText>
           <NewsItemText title={'Author:'}>{by}</NewsItemText>
           <NewsItemText title={'Authors karma:'}>{karma}</NewsItemText>
         </View>
